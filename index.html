@@ -78,8 +78,8 @@
                                 <li><strong>Livets Vändpunkter:</strong> Hitta klarhet i både med- och motgång.</li>
                                 <li><strong>Själslig Identitet:</strong> Vem är du bakom alla roller?</li>
                             </ul>
-                            <a href="mailto:anja011.11@protonmail.com?subject=Bokning: Medial Vägledning"
-                                class="btn-link">Boka vägledning &rarr;</a>
+                            <a href="#contact" data-subject="Bokning: Medial Vägledning"
+                                class="btn-link booking-btn">Boka vägledning &rarr;</a>
                         </div>
                     </div>
                     <div class="service-card reveal-up delay-1">
@@ -92,8 +92,8 @@
                                 <li><strong>Karriär, Hälsa & Framtid:</strong> Insikter om din nuvarande situation och
                                     väg framåt.</li>
                             </ul>
-                            <a href="mailto:anja011.11@protonmail.com?subject=Bokning: Vedisk Astro Profilering"
-                                class="btn-link">Boka session &rarr;</a>
+                            <a href="#contact" data-subject="Bokning: Vedisk Astro Profilering"
+                                class="btn-link booking-btn">Boka session &rarr;</a>
                         </div>
                     </div>
                     <div class="service-card reveal-up delay-2">
@@ -107,8 +107,8 @@
                                 <li><strong>Ungdoms- & Föräldrastöd:</strong> Hjälp för unga som behöver stöd att bryta
                                     isolering och hitta sin väg.</li>
                             </ul>
-                            <a href="mailto:anja011.11@protonmail.com?subject=Bokning: Samtal & Vägledning"
-                                class="btn-link">Boka samtal &rarr;</a>
+                            <a href="#contact" data-subject="Bokning: Samtal & Vägledning"
+                                class="btn-link booking-btn">Boka samtal &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +213,39 @@
                         </div>
                     </div>
                     <div class="booking-cta">
-                        <a href="mailto:anja011.11@protonmail.com" class="btn-primary">Skicka bokningsförfrågan</a>
+                        <form method="POST" action="https://formsubmit.co/2ee735f1766c61989bdc3a0bdba7e9a9"
+                            class="contact-form">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_next" value="http://localhost:5500/thank-you.html">
+                            <input type="hidden" name="_subject" value="Ny bokningsförfrågan från hemsidan">
+                            <input type="hidden" name="_captcha" value="true">
+                            <!-- Keeping captcha enabled for security -->
+                            <input type="text" name="_honey" style="display:none">
+
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" placeholder="Ditt Namn" required
+                                        class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" placeholder="Din E-post" required
+                                        class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" name="phone" id="phone" placeholder="Telefonnummer"
+                                    class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="message" id="message"
+                                    placeholder="Ditt Meddelande (gärna födelsedata om det gäller astrologi)" required
+                                    class="form-input" rows="5"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-submit">Skicka förfrågan</button>
+                        </form>
                     </div>
                 </div>
             </div>

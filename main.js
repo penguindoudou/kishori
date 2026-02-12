@@ -47,6 +47,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optional: Subtle parallax or grain movement could be added here
-    // but simple reveals are often more elegant.
+    // Handle specific booking button clicks (pre-fill message and scroll)
+    document.querySelectorAll('.booking-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = btn.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            const subjectData = btn.getAttribute('data-subject');
+            const messageField = document.querySelector('textarea[name="message"]');
+            const hiddenSubject = document.querySelector('input[name="_subject"]');
+
+            if (targetSection) {
+                // Smooth scroll
+                const navHeight = navbar.offsetHeight;
+                const targetPosition = targetSection.offsetTop - (navHeight - 20);
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Update form fields
+                if (hiddenSubject && subjectData) {
+                    hiddenSubject.value = subjectData;
+                }
+
+                if (messageField) {
+                    messageField.focus();
+                    // Pre-fill message if empty to guide user
+                    if (subjectData && messageField.value.trim() === '') {
+                        const serviceName = subjectData.replace('Bokning: ', '');
+                        messageField.value = `Hej! Jag är intresserad av att boka ${serviceName}.\n\n`;
+                    }
+                }
+            }
+        });
+    });
 });
