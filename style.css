@@ -607,6 +607,12 @@ footer a {
         padding: 0 1.5rem;
     }
 
+    /* Change side reveals to vertical reveals on mobile to prevent overflow */
+    .reveal-left,
+    .reveal-right {
+        transform: translateY(40px);
+    }
+
     /* Mobile Menu Toggle */
     .mobile-menu-toggle {
         display: flex;
