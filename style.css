@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -601,6 +602,8 @@ footer a {
     }
 
     .container {
+        width: 100%;
+        max-width: 100%;
         padding: 0 1.5rem;
     }
 
