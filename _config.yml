@@ -1,0 +1,23 @@
+# Site Settings
+title: Karmakonsulten Anette Kishori
+description: Integrerat Själsarbete med Anette Kishori. Medial vägledning, Vedisk astrologi och samtalsstöd i Gnesta.
+
+# URL Settings (Update these when moving to a custom domain)
+# Current: GitHub Pages subpath
+url: "https://penguindoudou.github.io"
+baseurl: "/kishori"
+
+# Future: Custom Domain
+# url: "https://karmakonsulten.se"
+# baseurl: ""
+
+# Jekyll settings
+timezone: Europe/Stockholm
+encoding: utf-8
+markdown: kramdown
+exclude:
+  - .gemini
+  - brain
+  - task.md
+  - implementation_plan.md
+  - walkthrough.md

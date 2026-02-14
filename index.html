@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -7,6 +9,73 @@
     <title>Karmakonsulten Anette Kishori | Integrerat Själsarbete</title>
     <meta name="description"
         content="Integrerat Själsarbete med Anette Kishori. Medial vägledning, Vedisk astrologi och samtalsstöd i Gnesta. Från öde till eget val.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicon.png">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/favicon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+    <meta property="og:title" content="Karmakonsulten Anette Kishori | Integrerat Själsarbete">
+    <meta property="og:description"
+        content="Medial vägledning, Vedisk astrologi och samtalsstöd i Gnesta. Kartlägg ditt Karma och hitta din väg.">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/kishori_anette.webp">
+    <meta property="og:site_name" content="Kishori">
+    <meta property="og:locale" content="sv_SE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}{{ site.baseurl }}/">
+    <meta property="twitter:title" content="Karmakonsulten Anette Kishori | Integrerat Själsarbete">
+    <meta property="twitter:description"
+        content="Medial vägledning, Vedisk astrologi och samtalsstöd i Gnesta. Kartlägg ditt Karma och hitta din väg.">
+    <meta property="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/kishori_anette.webp">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Karmakonsulten Anette Kishori",
+      "image": "{{ site.url }}{{ site.baseurl }}/assets/kishori_anette.webp",
+      "@id": "{{ site.url }}{{ site.baseurl }}/",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "telephone": "+46704337295",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Östra Storgatan 2",
+        "addressLocality": "Gnesta",
+        "postalCode": "64631",
+        "addressCountry": "SE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 59.048,
+        "longitude": 17.311
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/kishorisweden/",
+        "https://www.linkedin.com/in/anette-jansson-544023103/"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -221,8 +290,7 @@
                         <form method="POST" action="https://formsubmit.co/2ee735f1766c61989bdc3a0bdba7e9a9"
                             class="contact-form">
                             <!-- FormSubmit Configuration -->
-                            <input type="hidden" name="_next"
-                                value="https://penguindoudou.github.io/kishori/thank-you.html">
+                            <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/thank-you.html">
                             <input type="hidden" name="_subject" value="Ny bokningsförfrågan från hemsidan">
                             <input type="hidden" name="_captcha" value="true">
                             <!-- Keeping captcha enabled for security -->
