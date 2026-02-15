@@ -1,0 +1,86 @@
+---
+---
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidan hittades inte | 404 | Kishori</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicon.png">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+    <style>
+        .error-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--color-indigo), var(--color-bg));
+            padding: 0 2rem;
+        }
+
+        .error-card {
+            background: var(--color-glass);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 4rem;
+            border-radius: 12px;
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-card h1 {
+            color: var(--color-gold);
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+
+        .error-card h2 {
+            color: var(--color-earth);
+            margin-bottom: 1.5rem;
+        }
+
+        .error-card p {
+            font-size: 1.2rem;
+            color: var(--color-text-dim);
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-section">
+        <div class="error-card">
+            <h1>404</h1>
+            <h2>Vägen har tagit slut här</h2>
+            <p>Sidan du letar efter finns inte längre eller har flyttats. Låt oss hjälpa dig hitta tillbaka till rätt
+                stig.</p>
+
+            <a href="{{ site.baseurl }}/" class="btn-primary">Tillbaka till startsidan</a>
+        </div>
+    </div>
+</body>
+
+</html>
