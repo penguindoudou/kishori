@@ -138,10 +138,29 @@
             margin: 4rem 0;
         }
 
+        .article-image-grid figure {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .article-image-grid img {
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image-grid figcaption {
+            margin-top: 1.2rem;
+            font-size: 1rem;
+            color: var(--color-earth);
+            text-align: center;
+            font-style: italic;
+            font-family: var(--font-body);
+            line-height: 1.5;
+            max-width: 90%;
+            opacity: 0.9;
         }
 
         .back-link {
@@ -206,8 +225,15 @@
                     samhället, med en mer andlig och frisk inriktning.</p>
 
                 <div class="article-image-grid">
-                    <img src="../assets/articles/drottning-margareta/prinsessan.webp" alt="Prinsessan på 1800-talet">
-                    <img src="../assets/articles/drottning-margareta/kishori.webp" alt="Anette Kishori idag">
+                    <figure>
+                        <img src="../assets/articles/drottning-margareta/prinsessan.webp"
+                            alt="Prinsessan Maria Romonov i rosa tröja St Petersburg">
+                        <figcaption>Prinsessan Maria Romonov i rosa tröja St Petersburg</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../assets/articles/drottning-margareta/kishori.webp" alt="Nutid Stockholm">
+                        <figcaption>Nutid Stockholm</figcaption>
+                    </figure>
                 </div>
 
                 <p>Det tog cirka 700 år eller cirka 7 inkarnationer för själen som då var intresserad av att styra upp
