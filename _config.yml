@@ -4,12 +4,15 @@ description: Integrerat Själsarbete med Anette Kishori. Medial vägledning, Ved
 
 # URL Settings (Update these when moving to a custom domain)
 # Current: GitHub Pages subpath
-url: "https://penguindoudou.github.io"
-baseurl: "/kishori"
+#url: "https://penguindoudou.github.io"
+#baseurl: "/kishori"
 
 # Future: Custom Domain
 # url: "https://karmakonsulten.se"
 # baseurl: ""
+# URL Settings
+url: "https://kishori.simonsaysautomate.workers.dev"
+baseurl: ""
 
 # Jekyll settings
 timezone: Europe/Stockholm
