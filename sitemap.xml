@@ -2,7 +2,6 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home Page -->
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/</loc>
     <lastmod>{{ "now" | date: "%Y-%m-%d" }}</lastmod>
@@ -10,7 +9,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Auto-generate all other pages -->
   {% for page in site.pages %}
     {% if page.url contains '.html' 
        and page.url != '/thank-you.html' 
