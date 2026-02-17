@@ -2,6 +2,7 @@
   "name": "kishori",
   "compatibility_date": "2026-02-15",
   "assets": {
-    "directory": "./_site"
+    "directory": "./_site",
+    "not_found_handling": "404-page"
   }
 }
