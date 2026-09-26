@@ -104,4 +104,65 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Contact Form → Cloudflare Worker → Telegram
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.textContent : 'Skicka förfrågan';
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Skickar…';
+            }
+
+            const data = {
+                name: contactForm.querySelector('[name="name"]').value.trim(),
+                email: contactForm.querySelector('[name="email"]').value.trim(),
+                phone: (contactForm.querySelector('[name="phone"]')?.value || '').trim(),
+                message: contactForm.querySelector('[name="message"]').value.trim(),
+            };
+
+            // Remove any previous status message
+            contactForm.querySelector('.form-status')?.remove();
+
+            try {
+                const res = await fetch(
+                    'https://kishori-contact-worker.simonsaysautomate.workers.dev',
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                    }
+                );
+
+                const statusEl = document.createElement('p');
+                statusEl.className = 'form-status';
+
+                if (res.ok) {
+                    statusEl.textContent = '✅ Tack! Vi återkommer till dig snart.';
+                    statusEl.style.color = 'var(--accent, #a78bfa)';
+                    contactForm.reset();
+                } else {
+                    statusEl.textContent = '❌ Något gick fel. Försök igen eller kontakta oss via e-post.';
+                    statusEl.style.color = '#f87171';
+                }
+
+                submitBtn.insertAdjacentElement('afterend', statusEl);
+            } catch {
+                const statusEl = document.createElement('p');
+                statusEl.className = 'form-status';
+                statusEl.textContent = '❌ Nätverksfel. Kontrollera din anslutning och försök igen.';
+                statusEl.style.color = '#f87171';
+                submitBtn.insertAdjacentElement('afterend', statusEl);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            }
+        });
+    }
 });
