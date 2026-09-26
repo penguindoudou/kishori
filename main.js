@@ -138,19 +138,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 );
 
-                const statusEl = document.createElement('p');
-                statusEl.className = 'form-status';
-
                 if (res.ok) {
-                    statusEl.textContent = '✅ Tack! Vi återkommer till dig snart.';
-                    statusEl.style.color = 'var(--accent, #a78bfa)';
                     contactForm.reset();
+                    Array.from(contactForm.children).forEach(child => {
+                        if (child.style) child.style.display = 'none';
+                    });
+
+                    const statusEl = document.createElement('div');
+                    statusEl.className = 'form-status';
+                    statusEl.innerHTML = `
+                        <div style="text-align: center; padding: 2rem 0;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--text-color);">Tack för ditt meddelande!</h3>
+                            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">Vi återkommer till dig så snart vi kan.</p>
+                            <button type="button" class="btn-primary reset-form-btn">Skicka ett till meddelande</button>
+                        </div>
+                    `;
+                    contactForm.appendChild(statusEl);
+
+                    statusEl.querySelector('.reset-form-btn').addEventListener('click', () => {
+                        statusEl.remove();
+                        Array.from(contactForm.children).forEach(child => {
+                            if (child.style) child.style.display = '';
+                        });
+                    });
                 } else {
+                    const statusEl = document.createElement('p');
+                    statusEl.className = 'form-status';
                     statusEl.textContent = '❌ Något gick fel. Försök igen eller kontakta oss via e-post.';
                     statusEl.style.color = '#f87171';
+                    submitBtn.insertAdjacentElement('afterend', statusEl);
                 }
-
-                submitBtn.insertAdjacentElement('afterend', statusEl);
             } catch {
                 const statusEl = document.createElement('p');
                 statusEl.className = 'form-status';
